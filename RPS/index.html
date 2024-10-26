@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor Game</title>
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header id="heading">Let's Play Rock Paper Scissor Game</header>
+    <main>
+        <div id="choices">
+            <button class="choice-button" id="Rock">
+                <i class="em em-fist" aria-role="presentation" aria-label="RAISED FIST"></i>
+                <p>Rock</p>
+            </button>
+            <button class="choice-button" id="Paper">
+                <i class="em em-hand" aria-role="presentation" aria-label="RAISED HAND"></i>
+                <p>Paper</p>
+            </button>
+            <button class="choice-button" id="Scissor">
+                <i class="em em-v" aria-role="presentation" aria-label="VICTORY HAND"></i>
+                <p>Scissor</p>
+            </button>
+        </div>
+        <div id="scoreboard">
+            <div id="player-score" class="score">
+                <p id="userscore">0</p>
+                <p>Player Score</p>
+            </div>
+            <div id="computer-score" class="score">
+                <p id="compscore">0</p>
+                <p>Computer Score</p>
+            </div>
+        </div>
+        <div id="result">Play Your Move!</div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

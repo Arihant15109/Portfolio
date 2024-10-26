@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* creating the sidebar */
+
+#sidebar {
+    height: 100vh;
+    width: 20%;
+    background-color: #696969;
+    padding: 5px 10px;
+    line-height: 1.2;
+    position: fixed;
+    overflow: auto;
+}
+
+/* styling the sidebar heading */
+
+#sidebar h1 {
+    color: #D3D3D3;
+    text-align: center;
+    font-size: 30px;
+    padding: 5px;
+}
+
+/* styling the sidebar links */
+
+#sidebar a {
+    color: #D3D3D3;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s ease-in-out;
+    font-size: 20px;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+/* Designing the main content */
+
+#main-content {
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.5;
+    margin-left: 21.5%;
+    height: 100vh;
+    overflow: auto;
+    background-color: #D3D3D3;
+    color: #000000;
+    padding: 0 12px;
+}
+
+/* Setting the main content heading elements */
+
+#main-content h2 {
+    color: #000000;
+    text-align: start;
+    text-decoration: underline;
+    font-size: 30px;
+    padding: 5px;
+}
+
+/* Setting the main content paragraph */
+
+#main-content p {
+    color: #000000;
+    font-size: 20px;
+    padding: 5px;
+}
+
+/* Setting the main content section elements */
+
+#section1 h3 {
+    color: #000000;
+    text-align: start;
+    font-size: 25px;
+    padding: 5px;
+}
+
+ol {
+    padding-left: 25px;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+/* creating the opening slide animation */
+/* Also designing its elements*/
+
+#slide h1 {
+    font-size: 50px;
+    color: #74b64b;
+    text-align: center;
+    animation: slidedown 2s ease-in-out forwards;
+}
+
+@keyframes slidedown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: opacity 1.5s ease;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #F4F4F4;
+    color: #333;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: slideup 2s ease-in-out forwards;
+}
+
+@keyframes slideup {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+button:hover {
+    border-radius: 5px;
+    background-color: burlywood;
+    color: #000;
+    box-shadow: 0 0 20px lightsalmon, 0 0 40px lightsalmon;
+    transition: all 0.5s ease;
+}
+
+.content {
+    display: none;
+    opacity: 0;
+    padding: 20px;
+}
+
+.show-content {
+    display: block;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

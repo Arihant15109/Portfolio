@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Country Currency Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/6605168d45.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form>
+        <div id="container">
+            <h1>Real-Time Rates</h1>
+            <div id="amount">
+                <p>Enter Amount:</p>
+                <input type="number" id="amount" placeholder="e.g. 100">
+            </div>
+            <div id="Converter">
+                <div>
+                    <p>From:</p>
+                    <div id="from">
+                        <img src="https://flagsapi.com/US/flat/64.png">
+                        <select name="From">
+                        </select>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <div>
+                    <p>To:</p>
+                    <div id="to">
+                        <img src="https://flagsapi.com/IN/flat/64.png">
+                        <select name="To">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <p id="msg"></p>
+            <button id="convertButton">Convert</button>
+            <button id="resetButton">Reset</button>
+        </div>
+    </form>
+    <script src="country.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
