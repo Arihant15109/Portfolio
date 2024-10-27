@@ -1,3 +1,4 @@
+/* about section */
 function revealOnScroll() {
     const elements = document.querySelectorAll('.about-para');
     elements.forEach((element) => {
@@ -10,6 +11,16 @@ function revealOnScroll() {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("navbar");
+    const menuIcon = document.querySelector(".menu-icon");
+
+    menuIcon.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+    });
+});
+
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();
 
@@ -37,6 +48,7 @@ document.querySelectorAll('.carousel-container').forEach(carouselContainer => {
     prevBtn.addEventListener('click', showPrevCard);
 });
 
+
 document.querySelectorAll('.carousel-container2').forEach(carouselContainer => {
     const cards = carouselContainer.querySelectorAll('.card2');
     const nextBtn = carouselContainer.querySelector('.next-btn');
@@ -61,14 +73,15 @@ document.querySelectorAll('.carousel-container2').forEach(carouselContainer => {
     prevBtn.addEventListener('click', showPrevCard);
 });
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+
+document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     emailjs.sendForm('service_07q9kon', 'template_63bp18d', this)
-        .then(function(response) {
+        .then(function (response) {
             document.getElementById('response-message').innerHTML = 'Message sent successfully!';
-            document.getElementById('contact-form').reset();
-        }, function(error) {
+            document.getElementById('contact-form').reset(); // Reset the form fields
+        }, function (error) {
             document.getElementById('response-message').innerHTML = 'Failed to send message. Please try again later.';
         });
 });
