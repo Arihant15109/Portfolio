@@ -12,15 +12,6 @@ function revealOnScroll() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.getElementById("navbar");
-    const menuIcon = document.querySelector(".menu-icon");
-
-    menuIcon.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-    });
-});
-
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();
 

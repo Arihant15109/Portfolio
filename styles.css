@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 /* Home section */
@@ -10,108 +11,118 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#navbar {
-    background-color: transparent;
-    animation: fadefromup 2s ease-in-out 1 forwards;
+nav {
+    background: transparent;
+    height: 5vh;
+    width: 100%;
 }
 
-@keyframes fadefromup {
-    0% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-#nav-links {
-    padding-top: 10px;
-    display: flex;
-    list-style-type: none;
-    justify-content: space-around;
-}
-
-#page {
-    margin-left: 10px;
-    width: 40%;
-    font-size: 27px;
+label.heading {
     color: white;
-    font-weight: 600;
-}
-
-#links {
-    display: flex;
-    gap: 55px;
-}
-
-.menu-icon {
-    display: none;
     font-size: 1.5rem;
-    cursor: pointer;
+    padding: 0 5rem;
+    line-height: 3rem;
+    font-weight: bold;
 }
 
-@media (max-width: 720px) {
-    #nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+nav ul {
+    float: right;
+    margin-right: 3rem;
+}
 
+nav ul li {
+    display: inline;
+    line-height: 3rem;
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: #f1c40f;
+    transition: .3s;
+}
+
+.checkbtn {
+    color: white;
+    float: right;
+    line-height: 3rem;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+@media (max-width: 952px) {
     #main-home {
         flex-direction: column-reverse;
     }
-    
-    #links {
-        display: none;
-        flex-direction: column;
+    #main-home-intro {
+        text-align: center;
+    }
+    label.heading {
+        font-size: 1.2rem;
+        padding-left: 1.5rem;
+    }
+    nav ul li a {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+    ul {
+        position: fixed;
         width: 100%;
-        gap: 0;
-        padding-left: 10px;
+        height: 100vh;
+        background: #3f3f3f;
+        z-index: 1;
+        top: 3rem;
+        left: -100%;
+        transition: all .5s;
+        text-align: center;
     }
-
-    .menu-icon {
-        display: flex;
-        color: white;
+    nav ul li {
+        display: block;
     }
-
-    #navbar.active #links {
-        display: flex;
+    nav ul li a {
+        font-size: 0.8rem;
     }
-}
-
-#links a {
-    text-decoration: none;
-    color: white;
-}
-
-#links a:hover {
-    text-decoration: underline;
-    color: #f1c40f;
-    transition: color 0.3s;
+    a:hover {
+        background: none;
+        color: #f1c40f;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
 }
 
 #main-home {
-    margin: 30px 0;
-    margin-left: 3%;
-    padding: 0 5%;
+    z-index: 2;
+    width: 100%;
+    padding: 10vh 12vw;
+    gap: 10vw;
     display: flex;
     align-items: center;
-    gap: 120px;
     color: white;
     line-height: 1.5;
 }
 
-#photo {
-    border-radius: 50%;
-    box-shadow: 0 0 20px cadetblue;
-}
 
 #main-home-intro {
-    padding: 10px;
-    width: 100%;
-    animation: fadefromleft 2s ease-in-out 1 forwards;
+    padding: 1rem;
+    animation: fadefromleft 1.5s ease-out 1 forwards;
 }
 
 @keyframes fadefromleft {
@@ -119,25 +130,20 @@ body {
         opacity: 0;
         transform: translateX(-50%);
     }
-
+    
     100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-#main-home-pic {
-    width: 100%;
-    padding: 10px;
-    animation: fadefromright 2s ease-in-out 1 forwards;
-}
 
 @keyframes fadefromright {
     0% {
         opacity: 0;
         transform: translateX(50%);
     }
-
+    
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -145,48 +151,20 @@ body {
 }
 
 #main-home-intro h1 {
-    font-size: 40px;
+    font-size: 2rem;
+}
+
+#main-home-intro span {
+    line-height: 2rem;
+    font-size: 1.2rem;
+    color: aqua;
 }
 
 #main-home-intro p {
-    font-size: 15px;
-    margin-top: 20px;
+    margin-top: 1rem;
+    line-height: 1.2rem;
+    font-size: 1rem;
     color: rgb(224, 169, 68);
-}
-
-#profession {
-    display: inline-flex;
-    width: 100%;
-    margin-right: 15px;
-    font-family: 'Courier', monospace;
-    color: cyan;
-    font-size: 32px;
-    border-right: 3px solid cyan;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3s steps(40, end) forwards, blink-caret 1s step-end infinite;
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 460px;
-    }
-}
-
-@keyframes blink-caret {
-
-    from,
-    to {
-        border-color: transparent;
-    }
-
-    50% {
-        border-color: cyan;
-    }
 }
 
 .linkicon {
@@ -233,15 +211,26 @@ body {
     box-shadow: 0 0 20px cyan;
 }
 
+#main-home-pic {
+    padding: 0.3rem 1rem;
+    animation: fadefromright 1.5s ease-out 1 forwards;
+}
+
+#photo {
+    border-radius: 50%;
+    box-shadow: 0 0 20px cadetblue;
+}
+
 /* Home section end */
 
 /* About section */
 
 #about {
-    margin-top: 35px;
-    margin-bottom: 90px;
-    margin-right: 100px;
-    margin-left: 100px;
+    height: 100%;
+    margin-top: 3rem;
+    margin-bottom: 7rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
     line-height: 1.5;
     text-align: center;
 }
@@ -278,8 +267,9 @@ body {
 /* Skills section */
 
 #skills {
-    margin: auto;
-    width: 85%;
+    margin-top: 3rem;
+    width: 100%;
+    padding: 0 7vw;
     font-family: 'Courier New', Courier, monospace;
     line-height: 1.5;
     animation: fadefrombelow 2.5s ease-in-out 1 forwards;
@@ -323,7 +313,8 @@ body {
 .carousel-container {
     position: relative;
     width: 85vw;
-    height: 100px;
+    min-height: 11vh;
+    max-height: 32vh;
     overflow: hidden;
     background-color: transparent;
 }
@@ -388,7 +379,7 @@ body {
     font-family: popins;
     line-height: 1.5;
     animation: fadefrombelow 2s ease-in-out 1 forwards;
-    margin: 0 50px;
+    margin-top: 3rem;
 }
 
 #works h1 {
@@ -485,7 +476,7 @@ body {
 /* Contact section */
 
 #contact {
-    margin-top: 10px;
+    margin-top: 3rem;
     font-family: 'Times New Roman', Times, serif;
     animation: fadefrombelow 2s ease-in-out 1 forwards;
     margin-right: 3%;
